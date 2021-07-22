@@ -4,8 +4,7 @@ after {
   padding: 0;
   margin: 0;
   border: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
@@ -54,24 +53,15 @@ body {
   }
   .header__body {
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
     height: 40px;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
   }
   .header__burger-catalog-wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
+    flex: 0 0 40px;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
     z-index: 3;
   }
   .header__burger-catalog-text {
@@ -83,12 +73,8 @@ body {
     color: #fff;
   }
   .header__burger-catalog {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
     width: 20px;
     height: 20px;
     z-index: 3;
@@ -106,7 +92,7 @@ body {
     content: "";
     display: block;
     position: relative;
-    bottom: 4px;
+    bottom: 5px;
     left: 0;
   }
   .header__burger-catalog span {
@@ -125,13 +111,29 @@ body {
   .header__catalog-list {
     display: none;
   }
+  .header__burger-catalog.active span::after {
+    content: "";
+    display: block;
+    position: relative;
+    top: -1px;
+    transform: rotate(45deg);
+  }
+  .header__burger-catalog.active span {
+    display: block;
+    height: 0;
+  }
+  .header__burger-catalog.active span::before {
+    content: "";
+    display: block;
+    position: relative;
+    top: 0;
+    transform: rotate(-45deg);
+  }
   .header__email {
-    display: -webkit-box;
-    display: -ms-flexbox;
+    margin: 0px 10px 0px 10px;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: center;
+    align-items: center;
     z-index: 3;
   }
   .header__email a {
@@ -142,12 +144,9 @@ body {
     color: #ed1a3c;
   }
   .header__search {
-    display: -webkit-box;
-    display: -ms-flexbox;
+    margin: 0px 10px 0px 0px;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     width: 100%;
     z-index: 3;
   }
@@ -157,12 +156,9 @@ body {
     width: 16px;
   }
   .header__burger-menu-wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
+    flex: 0 0 40px;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
     z-index: 3;
   }
   .header__burger-menu-text {
@@ -174,12 +170,8 @@ body {
     color: #fff;
   }
   .header__burger-menu {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
     width: 20px;
     height: 20px;
     z-index: 3;
@@ -218,22 +210,53 @@ body {
     display: block;
     position: relative;
     top: -1px;
-    -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
+    transform: rotate(45deg);
+    transition: 0.2s;
   }
   .header__burger-menu.active span {
     display: block;
     height: 0;
+    transition: 0.2s;
   }
   .header__burger-menu.active span::before {
     content: "";
     display: block;
     position: relative;
     top: 0;
-    -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    transition: 0.2s;
+  }
+  .header__menu {
+    display: block;
+    position: fixed;
+    top: 0px;
+    right: -100%;
+    transition: 0.5s;
+    box-shadow: -9px 5px 32px -7px rgba(0, 0, 0, 0.71);
+    border-radius: 5px;
   }
   .header__menu-list {
-    display: none;
+    display: flex;
+    flex-direction: column;
+  }
+  .header__menu-list li {
+    list-style: url("/image/header/bullet.png");
+    padding: 10px 0px 10px 0px;
+  }
+  .header__menu-link {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 22.5px;
+    color: #4b5c63;
+  }
+  .header__menu.active {
+    padding: 0px 0px 0px 40px;
+    display: block;
+    position: fixed;
+    top: 40px;
+    right: 0;
+    background: #fff;
+    width: 70%;
   }
 }
