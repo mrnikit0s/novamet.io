@@ -14,6 +14,10 @@ body {
   font-family: "PT Sans, sans-serif";
 }
 
+body.lock {
+  overflow: hidden;
+}
+
 .container {
   max-width: 1180px;
   margin: 0px auto;
