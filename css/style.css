@@ -389,7 +389,7 @@ body.lock {
   }
   .section1__logo {
     margin: 0px auto;
-    max-width: 270px;
+    max-width: 240px;
   }
   .section1__logo img {
     display: block;
@@ -444,6 +444,7 @@ body.lock {
     color: #000;
   }
   .section1__item {
+    margin: 0px 0px 20px 0px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
