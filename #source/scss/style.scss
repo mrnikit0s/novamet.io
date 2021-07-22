@@ -115,7 +115,7 @@ body {
 		}
 		&__catalog {
 			display: block;
-			position: fixed;
+			position: absolute;
 			top: 0px;
 			left: -100%;
 			transition: 0.5s;
@@ -125,10 +125,26 @@ body {
 		}
 
 		&__catalog-list {
-			list-style: none;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			padding: 0px 0px 0px 25px;
+			list-style: url("/image/header/bullet.png");
 		}
 		&__catalog-list li {
 			padding: 10px 0px 10px 0px;
+		}
+		&__catalog-btn {
+			margin: 15px 0px 10px 0px;
+			width: calc(100% - 40px);
+			background: #ed1a3c;
+			display: flex;
+			justify-content: center;
+			border-radius: 3px;
+		}
+		&__catalog-btn a {
+			color: #fff;
+			text-align: center;
 		}
 		&__catalog-link {
 			@include fnt(700, 15, 22.5);
@@ -154,13 +170,14 @@ body {
 			transform: rotate(-45deg);
 		}
 		&__catalog.active {
-			padding: 0px 0px 0px 20px;
+			padding: 0px 0px 0px 0px;
 			display: block;
 			position: fixed;
 			top: 40px;
 			left: 0;
 			width: 70%;
-			height: auto;
+			height: 100%;
+			overflow: auto;
 		}
 		//header__catalog.active end
 		&__email {
@@ -291,7 +308,8 @@ body {
 			top: 40px;
 			right: 0;
 			width: 70%;
-			height: auto;
+			height: 100%;
+			overflow: auto;
 		}
 		//menu.active
 	}
