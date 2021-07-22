@@ -318,4 +318,66 @@ body.lock {
     overflow: auto;
     z-index: 3;
   }
+  .topline {
+    padding: 0px 10px 0px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #edf1f2;
+  }
+  .topline__city::after {
+    content: url("/image/header/icon-arrow-down.png");
+    padding: 0px 0px 0px 10px;
+    width: 12px;
+    height: 8px;
+  }
+  .topline__city a {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22.5px;
+    color: #000;
+  }
+  .topline__cart {
+    display: flex;
+    align-items: center;
+  }
+  .topline__cart-img {
+    display: flex;
+  }
+  .topline__cart-img img {
+    display: block;
+    width: 26px;
+    height: auto;
+  }
+  .topline__cart-img span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    top: 4px;
+    right: 10px;
+    background: #ed1a3b;
+    border-radius: 50%;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 13px;
+    color: #fff;
+  }
+  .topline__cart__sum span {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 19.5px;
+    color: #000;
+  }
 }

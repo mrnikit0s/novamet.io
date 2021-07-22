@@ -320,6 +320,64 @@ body.lock {
 			overflow: auto;
 			z-index: 3;
 		}
-		//menu.active
+		//menu.active end
+	}
+	.topline {
+		padding: 0px 10px 0px 10px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		position: relative;
+		top: 40px;
+		left: 0;
+		width: 100%;
+		height: 40px;
+		background-color: #edf1f2;
+		&__city {
+		}
+		&__city::after {
+			content: url("/image/header/icon-arrow-down.png");
+			padding: 0px 0px 0px 10px;
+			width: 12px;
+			height: 8px;
+		}
+		&__city a {
+			@include fnt(400, 15, 22.5);
+			color: #000;
+		}
+		&__cart {
+			display: flex;
+			align-items: center;
+		}
+
+		&__cart-img {
+			display: flex;
+		}
+		&__cart-img img {
+			display: block;
+			width: 26px;
+			height: auto;
+		}
+		&__cart-img span {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			width: 20px;
+			height: 20px;
+			top: 4px;
+			right: 10px;
+			background: #ed1a3b;
+			border-radius: 50%;
+			@include fnt(700, 13, 13);
+			color: #fff;
+		}
+		&__cart__sum {
+		}
+		&__cart__sum span {
+			@include fnt(700, 13, 19.5);
+			color: #000;
+		}
 	}
 }
