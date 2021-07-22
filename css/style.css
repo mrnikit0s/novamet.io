@@ -386,9 +386,9 @@ body.lock {
   .section1__content {
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
   .section1__logo {
+    margin: 0px auto;
     max-width: 270px;
   }
   .section1__logo img {
@@ -398,6 +398,7 @@ body.lock {
   .section1__phone-red {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
     margin: 10px 0px 10px 0px;
   }
@@ -421,6 +422,7 @@ body.lock {
   .section1__phone-black {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
     margin: 0px 0px 10px 0px;
   }
@@ -440,5 +442,41 @@ body.lock {
     font-size: 18px;
     line-height: 22.5px;
     color: #000;
+  }
+  .section1__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: 1px solid #ed1a3c;
+  }
+  .section1__price::before {
+    content: url("/image/header/icon-rub.png");
+    display: flex;
+    margin: 0px 10px 0px 0px;
+  }
+  .section1__price {
+    display: flex;
+  }
+  .section1__price a {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22.5px;
+    color: #4c4c4c;
+  }
+  .section1__calc::before {
+    content: url("/image/header/icon-calc.png");
+    display: flex;
+    margin: 0px 10px 0px 0px;
+  }
+  .section1__calc {
+    display: flex;
+  }
+  .section1__calc a {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22.5px;
+    color: #4c4c4c;
   }
 }

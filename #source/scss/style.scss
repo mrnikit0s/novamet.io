@@ -385,10 +385,11 @@ body.lock {
 		&__content {
 			display: flex;
 			flex-direction: column;
-			align-items: center;
+			//align-items: center;
 		}
 
 		&__logo {
+			margin: 0px auto;
 			max-width: 270px;
 		}
 		&__logo img {
@@ -398,6 +399,7 @@ body.lock {
 		&__phone-red {
 			display: flex;
 			flex-direction: row;
+			justify-content: center;
 			align-items: center;
 			margin: 10px 0px 10px 0px;
 		}
@@ -419,6 +421,7 @@ body.lock {
 		&__phone-black {
 			display: flex;
 			flex-direction: row;
+			justify-content: center;
 			align-items: center;
 			margin: 0px 0px 10px 0px;
 		}
@@ -437,12 +440,36 @@ body.lock {
 			color: #000;
 		}
 		&__item {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			border-bottom: 1px solid #ed1a3c;
 		}
 
+		&__price::before {
+			content: url("/image/header/icon-rub.png");
+			display: flex;
+			margin: 0px 10px 0px 0px;
+		}
 		&__price {
+			display: flex;
+		}
+		&__price a {
+			@include fnt(400, 15, 22.5);
+			color: #4c4c4c;
+		}
+		&__calc::before {
+			content: url("/image/header/icon-calc.png");
+			display: flex;
+			margin: 0px 10px 0px 0px;
 		}
 
 		&__calc {
+			display: flex;
+		}
+		&__calc a {
+			@include fnt(400, 15, 22.5);
+			color: #4c4c4c;
 		}
 	}
 }
