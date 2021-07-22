@@ -123,7 +123,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     padding: 0px 0px 0px 25px;
-    list-style: url("/image/header/bullet.png");
+    list-style: url("image/header/bullet.png");
   }
   .header__catalog-list li {
     padding: 10px 0px 10px 0px;
@@ -287,7 +287,7 @@ body {
     flex-direction: column;
   }
   .header__menu-list li {
-    list-style: url("/image/header/bullet.png");
+    list-style: url("image/header/bullet.png");
     padding: 10px 0px 10px 0px;
   }
   .header__menu-link {
