@@ -380,4 +380,65 @@ body.lock {
     line-height: 19.5px;
     color: #000;
   }
+  .section1 {
+    margin: 60px 0px 0px 0px;
+  }
+  .section1__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .section1__logo {
+    max-width: 270px;
+  }
+  .section1__logo img {
+    display: block;
+    width: 100%;
+  }
+  .section1__phone-red {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px 0px 10px 0px;
+  }
+  .section1__phone-red span::before {
+    content: url("/image/header/icon-phone-red.png");
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px 10px 0px 0px;
+  }
+  .section1__phone-red span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22.5px;
+    color: #ed1a3c;
+  }
+  .section1__phone-black {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px 0px 10px 0px;
+  }
+  .section1__phone-black span::before {
+    content: url("/image/header/icon-phone.png");
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px 10px 0px 0px;
+  }
+  .section1__phone-black span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22.5px;
+    color: #000;
+  }
 }
