@@ -108,8 +108,28 @@ body {
     top: 4px;
     left: 0;
   }
+  .header__catalog {
+    display: block;
+    position: fixed;
+    top: 0px;
+    left: -100%;
+    transition: 0.5s;
+    box-shadow: -9px 5px 32px -7px rgba(0, 0, 0, 0.71);
+    border-radius: 5px;
+    background: #fff;
+  }
   .header__catalog-list {
-    display: none;
+    list-style: none;
+  }
+  .header__catalog-list li {
+    padding: 10px 0px 10px 0px;
+  }
+  .header__catalog-link {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 22.5px;
+    color: #4b5c63;
   }
   .header__burger-catalog.active span::after {
     content: "";
@@ -128,6 +148,15 @@ body {
     position: relative;
     top: 0;
     transform: rotate(-45deg);
+  }
+  .header__catalog.active {
+    padding: 0px 0px 0px 20px;
+    display: block;
+    position: fixed;
+    top: 40px;
+    left: 0;
+    width: 70%;
+    height: auto;
   }
   .header__email {
     margin: 0px 10px 0px 10px;
@@ -234,6 +263,7 @@ body {
     transition: 0.5s;
     box-shadow: -9px 5px 32px -7px rgba(0, 0, 0, 0.71);
     border-radius: 5px;
+    background: #fff;
   }
   .header__menu-list {
     display: flex;
@@ -256,7 +286,6 @@ body {
     position: fixed;
     top: 40px;
     right: 0;
-    background: #fff;
     width: 70%;
     height: auto;
   }

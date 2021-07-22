@@ -114,13 +114,25 @@ body {
 			left: 0;
 		}
 		&__catalog {
+			display: block;
+			position: fixed;
+			top: 0px;
+			left: -100%;
+			transition: 0.5s;
+			box-shadow: -9px 5px 32px -7px rgba(0, 0, 0, 0.71);
+			border-radius: 5px;
+			background: #fff;
 		}
 
 		&__catalog-list {
-			display: none;
+			list-style: none;
 		}
-
+		&__catalog-list li {
+			padding: 10px 0px 10px 0px;
+		}
 		&__catalog-link {
+			@include fnt(700, 15, 22.5);
+			color: #4b5c63;
 		}
 		// header__catalog.active begin
 		&__burger-catalog.active span::after {
@@ -140,6 +152,15 @@ body {
 			position: relative;
 			top: 0;
 			transform: rotate(-45deg);
+		}
+		&__catalog.active {
+			padding: 0px 0px 0px 20px;
+			display: block;
+			position: fixed;
+			top: 40px;
+			left: 0;
+			width: 70%;
+			height: auto;
 		}
 		//header__catalog.active end
 		&__email {
@@ -247,6 +268,7 @@ body {
 			transition: 0.5s;
 			box-shadow: -9px 5px 32px -7px rgba(0, 0, 0, 0.71);
 			border-radius: 5px;
+			background: #fff;
 		}
 
 		&__menu-list {
@@ -268,7 +290,6 @@ body {
 			position: fixed;
 			top: 40px;
 			right: 0;
-			background: #fff;
 			width: 70%;
 			height: auto;
 		}
