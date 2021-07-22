@@ -15,6 +15,7 @@ body {
 }
 
 body.lock {
+  position: relative;
   overflow: hidden;
 }
 
@@ -30,6 +31,7 @@ body.lock {
 
 @media (min-width: 320px) {
   body.lock {
+    position: relative;
     overflow: hidden;
   }
   .container {
@@ -181,6 +183,7 @@ body.lock {
     width: 70%;
     height: 100%;
     overflow: auto;
+    z-index: 3;
   }
   .header__email {
     margin: 0px 10px 0px 10px;
@@ -313,5 +316,6 @@ body.lock {
     width: 70%;
     height: 100%;
     overflow: auto;
+    z-index: 3;
   }
 }
