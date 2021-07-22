@@ -131,13 +131,13 @@ body.lock {
 			flex-direction: column;
 			align-items: flex-start;
 			padding: 0px 0px 0px 25px;
-			list-style: url("image/header/bullet.png");
+			list-style: url("../image/header/bullet.png");
 		}
 		&__catalog-list li {
 			padding: 10px 0px 10px 0px;
 		}
 		&__catalog-list li:last-child {
-			padding: 0px 0px 30px 0px;
+			padding: 0px 0px 60px 0px;
 		}
 		&__catalog-btn {
 			margin: 15px 0px 10px 0px;
@@ -298,7 +298,7 @@ body.lock {
 			flex-direction: column;
 		}
 		&__menu-list li {
-			list-style: url("image/header/bullet.png");
+			list-style: url("../image/header/bullet.png");
 			padding: 10px 0px 10px 0px;
 		}
 		&__menu-link {
