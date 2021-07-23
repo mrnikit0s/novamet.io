@@ -16,11 +16,7 @@ body {
 
 body.lock {
   overflow: hidden;
-}
-
-.wrapper.lock {
-  position: relative;
-  overflow: hidden;
+  touch-action: none;
 }
 
 .container {
@@ -36,10 +32,7 @@ body.lock {
 @media (min-width: 320px) {
   body.lock {
     overflow: hidden;
-  }
-  .wrapper.lock {
-    position: relative;
-    overflow: hidden;
+    touch-action: none;
   }
   .container {
     max-width: 320px;
