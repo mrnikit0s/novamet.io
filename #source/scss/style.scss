@@ -499,7 +499,7 @@ h1 {
 			@include fnt(700, 28, 33);
 		}
 		&__item {
-			flex: 0 0 100%;
+			flex: 1 0 100%;
 			margin: 0px 0px 10px 0px;
 			padding: 10px 10px 10px 10px;
 			//max-width: 300px;
@@ -532,9 +532,9 @@ h1 {
 		}
 	}
 }
-@media (min-width: 450px) {
+@media (min-width: 425px) {
 	.container {
-		min-width: 450px;
+		min-width: 425px;
 		width: 100%;
 		margin: 0px 0px 0px 0px;
 		padding: 0px 10px 0px 10px;
@@ -563,10 +563,10 @@ h1 {
 			align-items: center;
 		}
 		&__item {
+			max-width: calc(49% - 10px);
 			margin: 5px 5px 5px 5px;
 			padding: 10px 10px 10px 10px;
-			max-width: 280px;
-			width: 100%;
+
 			height: auto;
 			border: 1px solid #cdcdcd;
 		}
