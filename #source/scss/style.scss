@@ -222,7 +222,50 @@ h1 {
 			height: 16px;
 			width: 16px;
 		}
-
+		&__search-block {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			position: absolute;
+			top: -1000px;
+			transition: 0.2s;
+		}
+		&__search-block.active {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			position: fixed;
+			top: 40px;
+			left: 0;
+			height: 40px;
+			width: 100%;
+			background: #2a3235;
+			z-index: 3;
+			transition: 0.2s;
+		}
+		&__search-form {
+			transition: 0.2s;
+		}
+		&__search-form.active {
+			display: flex;
+			justify-content: center;
+			position: absolute;
+			top: 0px;
+			left: 0;
+			width: 100%;
+			//background: #fff;
+		}
+		&__search-form input {
+			margin: 0px 0px 0px 0px;
+			padding: 6px 10px 6px 50px;
+			background: url("/image/header/icon-search.png") 16px center no-repeat;
+			background-color: #fff;
+			border-radius: 5px;
+			border: 1px solid #e5e5e5;
+			//box-shadow: 2px 2px 4px rgb(0 0 0 / 25%);
+			border-radius: 5px;
+			width: calc(100% - 20px);
+		}
 		&__burger-menu-wrapper {
 			flex: 0 0 40px;
 			display: flex;
