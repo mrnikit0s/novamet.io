@@ -449,6 +449,12 @@ h1 {
 			@include fnt(700, 18, 22.5);
 			color: #000;
 		}
+		&__whatsapp {
+			display: none;
+		}
+		&__callback {
+			display: none;
+		}
 		&__item {
 			margin: 0px 0px 20px 0px;
 			display: flex;
@@ -569,6 +575,86 @@ h1 {
 
 			height: auto;
 			border: 1px solid #cdcdcd;
+		}
+	}
+}
+@media (min-width: 460px) {
+	.container {
+		min-width: 460px;
+		width: 100%;
+		margin: 0px 0px 0px 0px;
+		padding: 0px 10px 0px 10px;
+	}
+	.section1 {
+		&__content-row {
+			display: flex;
+			flex-direction: row;
+		}
+		&__content-col {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			flex: 0 0 49.99%;
+		}
+		&__phone-black {
+			margin: 10px 0px 10px 0px;
+		}
+		&__price {
+			margin: 10px 0px 10px 0px;
+		}
+		&__whatsapp::before {
+			content: url("/image/header/icons8-whatsapp.svg");
+			display: flex;
+			align-items: center;
+			margin: 0px 10px 0px 0px;
+			width: 20px;
+			height: 20px;
+		}
+		&__whatsapp {
+			display: flex;
+			align-items: center;
+		}
+		&__whatsapp a {
+			@include fnt(700, 15, 22.5);
+			color: #4caf50;
+		}
+		&__callback {
+			display: flex;
+		}
+		&__callback a {
+			@include fnt(400, 15, 22.5);
+			color: $colorGray;
+			text-decoration: underline;
+		}
+	}
+}
+@media (min-width: 800px) {
+	.container {
+		min-width: 800px;
+		width: 100%;
+		margin: 0px 0px 0px 0px;
+		padding: 0px 10px 0px 10px;
+	}
+	.section1 {
+		border-bottom: 1px solid #ed1a3c;
+		&__content-row {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+		}
+		&__content-col {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			flex: 0 0 24.999%;
+		}
+		&__content-col:first-child {
+			margin: 0px 10px 0px 0px;
+		}
+		&__phone-red,
+		&__phone-black {
+			margin: 0px 0px 8px 0px;
 		}
 	}
 }
