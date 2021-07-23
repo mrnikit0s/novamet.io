@@ -6,6 +6,7 @@ $(document).ready(function () {
 		if ($catalogFlag == -1) {
 			$('.header__burger-menu,.header__menu').toggleClass('active');
 			$('body').toggleClass('lock');
+			$('.wrapper').toggleClass('lock');
 			$menuFlag = $menuFlag * -1;
 			$catalogFlag = -1;
 		}
@@ -14,6 +15,7 @@ $(document).ready(function () {
 		if ($menuFlag == -1) {
 			$('.header__burger-catalog,.header__catalog').toggleClass('active');
 			$('body').toggleClass('lock');
+			$('.wrapper').toggleClass('lock');
 			$catalogFlag = $catalogFlag * (-1);
 			$menuFlag = -1;
 		}

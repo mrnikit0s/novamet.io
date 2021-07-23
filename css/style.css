@@ -15,6 +15,10 @@ body {
 }
 
 body.lock {
+  overflow: hidden;
+}
+
+.wrapper.lock {
   position: relative;
   overflow: hidden;
 }
@@ -31,6 +35,9 @@ body.lock {
 
 @media (min-width: 320px) {
   body.lock {
+    overflow: hidden;
+  }
+  .wrapper.lock {
     position: relative;
     overflow: hidden;
   }
