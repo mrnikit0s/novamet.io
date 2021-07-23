@@ -14,6 +14,8 @@ $fontFamily: "PT Sans", sans-serif;
 	font-size: $fontSize + px;
 	line-height: $lineHeight + px;
 }
+$colorRed: #ed1a3c;
+$colorGray: #4c4c4c;
 
 html,
 body {
@@ -24,6 +26,10 @@ body {
 body.lock {
 	overflow: hidden;
 	touch-action: none;
+}
+h1 {
+	@include fnt(700, 28, 30);
+	color: #4c4c4c;
 }
 
 .container {
@@ -41,7 +47,7 @@ body.lock {
 	}
 
 	.container {
-		max-width: 320px;
+		min-width: 300px;
 		width: 100%;
 		margin: 0px 0px 0px 0px;
 		padding: 0px 10px 0px 10px;
@@ -189,6 +195,9 @@ body.lock {
 			overflow: auto;
 			z-index: 3;
 		}
+		&__time {
+			display: none;
+		}
 		//header__catalog.active end
 		&__email {
 			margin: 0px 10px 0px 10px;
@@ -206,7 +215,6 @@ body.lock {
 			margin: 0px 10px 0px 0px;
 			display: flex;
 			justify-content: center;
-			width: 100%;
 			z-index: 3;
 		}
 		&__search img {
@@ -473,6 +481,94 @@ body.lock {
 		&__calc a {
 			@include fnt(400, 15, 22.5);
 			color: #4c4c4c;
+		}
+	}
+	.content {
+		padding: 0px 10px 0px 10px;
+		&_row {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: center;
+		}
+
+		&__title {
+		}
+		&__title h1 {
+			text-align: center;
+			@include fnt(700, 28, 33);
+		}
+		&__item {
+			flex: 0 0 100%;
+			margin: 0px 0px 10px 0px;
+			padding: 10px 10px 10px 10px;
+			//max-width: 300px;
+			//width: 100%;
+			height: auto;
+			border: 1px solid #cdcdcd;
+		}
+
+		&__item-title {
+			margin: 0px 0px 0px 0px;
+			@include fnt(700, 14, 22.5);
+			letter-spacing: 0.3;
+			color: $colorRed;
+			text-transform: uppercase;
+		}
+
+		&__item-list {
+			margin: 0px 0px 0px 20px;
+		}
+		&__item-list li::marker {
+			color: $colorRed;
+		}
+		&__item-list li {
+			list-style: square;
+			padding: 0px 0px 5px 0px;
+		}
+		&__item-link {
+			@include fnt(400, 14, 22.4);
+			color: $colorGray;
+		}
+	}
+}
+@media (min-width: 450px) {
+	.container {
+		min-width: 450px;
+		width: 100%;
+		margin: 0px 0px 0px 0px;
+		padding: 0px 10px 0px 10px;
+	}
+	.header {
+		&__time {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			z-index: 3;
+		}
+		&__time span:first-child {
+			@include fnt(700, 14, 22.5);
+			color: #fff;
+		}
+		&__time span:last-child {
+			@include fnt(400, 14, 22.5);
+			color: #fff;
+		}
+	}
+	.content {
+		&_row {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: center;
+		}
+		&__item {
+			margin: 5px 5px 5px 5px;
+			padding: 10px 10px 10px 10px;
+			max-width: 280px;
+			width: 100%;
+			height: auto;
+			border: 1px solid #cdcdcd;
 		}
 	}
 }
