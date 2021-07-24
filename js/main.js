@@ -4,7 +4,8 @@ $catalogFlag = -1;
 $w = $(window).width(); //текущий размер экрана
 $moveFlag460 = 0;
 $moveFlag800 = 0;
-
+$moveFlag1024 = 0;
+$moveFlag1200 = 0;
 $reloadFlag = 0;
 $(document).ready(function () {
 	$('.header__burger-menu').click(function (event) {
@@ -71,6 +72,36 @@ $(document).ready(function () {
 		$('.section1__calc').appendTo('.section1__content-col:last-child');
 		$moveFlag800 = 1;
 	}
+	if ($moveFlag1024 == 0 && $w >= 1024) {
+		$('.topline').insertAfter('.section1');
+		$('.section1__content-row').append('<div class="section1__content-col"</div>');
+		/*---------------режим работы и email в 4 колонку --------------*/
+		$('.header__time').appendTo('.section1__content-col:nth-child(4)');
+		$('.header__email').appendTo('.section1__content-col:nth-child(4)');
+		/*---------------корзину в последнюю колонку -------------------*/
+		$('.topline__cart').appendTo('.section1__content-col:last-child');
+		$('.topline__cart__sum span').before('<div class="topline__cart-text">Сумма: </div>');
 
-	// перестановка элементов в section1 ----------------------------------
+		/*--------------- делим topline на колонки -------------------*/
+		$('.topline').append('<div class="topline__row"</div>');
+		for ($i = 0; $i < 3; $i++) {
+			$('.topline__row').append('<div class="topline__col"></div>');
+		}
+		/*---------------вставляем блоки--------------------*/
+		$('.topline__city').appendTo('.topline__col:first-child');
+		$('.header__search').appendTo('.topline__col:nth-child(2)');
+		$('.section1__price, .section1__calc').appendTo('.topline__col:last-child');
+		/*---------------переносим header------------------ */
+		$('.header').insertAfter('.topline');
+		/*---------------меняем местами колонки-------------*/
+		$('.section1__content-col:nth-child(4)').insertAfter('.section1__content-col:nth-child(2)');
+	}
+	if ($moveFlag1200 == 0 && $w >= 1200) {
+		/*---------------добавляем контейнер topline----------------*/
+		$('<div class=container></div>').appendTo('.topline');
+		/*---------------переносим row в контейнер-----------*/
+		$('.topline__row').appendTo('.topline .container');
+		/*--------------------content__row в контейнер ------*/
+		$('.content__row').appendTo('.content>.container');
+	}
 });
