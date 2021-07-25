@@ -14,6 +14,7 @@ $(document).ready(function () {
 	/* slider */
 	$('.slider').slick({
 		slideToShow: 1,
+		dots: true,
 		arrows: false
 	});
 	/*---------------------------------------*/

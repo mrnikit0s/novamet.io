@@ -90,6 +90,14 @@ input::placeholder {
 		width: 100%;
 	}
 }
+.slick-slider {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	height: 380px;
+}
 .slick-list {
 	min-height: 190px;
 	margin: 0px auto;
@@ -103,6 +111,26 @@ input::placeholder {
 	align-items: center;
 }
 .slick-slide {
+}
+
+.slick-dots {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	bottom: 50px;
+	list-style: none;
+}
+.slick-dots button {
+	margin: 0px 5px 0px 5px;
+	font-size: 0;
+	width: 20px;
+	height: 20px;
+	background-color: #fff;
+	border-radius: 50%;
+}
+.slick-active button {
+	background: $colorRed;
 }
 @media (min-width: 320px) {
 	body.lock {
