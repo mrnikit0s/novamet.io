@@ -13,9 +13,31 @@ $reloadFlag = 0;
 $(document).ready(function () {
 	/* slider */
 	$('.slider').slick({
+		centerMode: true,
 		slideToShow: 1,
 		dots: true,
-		arrows: false
+		arrows: false,
+		autoplay: false,
+		autoplaySpeed: 2000,
+		responsive: [
+			{
+				breakpoint: 1024,
+				settings: {
+					centerMode: true,
+					infinite: true,
+					dots: true
+				}
+			},
+			{
+				breakpoint: 800,
+				settings: {
+					centerMode: false,
+					infinite: true,
+					dots: true
+				}
+			},
+
+		]
 	});
 	/*---------------------------------------*/
 
