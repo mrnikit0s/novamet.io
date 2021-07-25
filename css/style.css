@@ -107,7 +107,7 @@ input::placeholder {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 40px 0px 0px 0px;
+  margin: 20px 0px 0px 0px;
   display: flex;
 }
 
@@ -1047,6 +1047,23 @@ input::placeholder {
     font-size: 14px;
     line-height: 22.5px;
   }
+  .slick-slider {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: relative;
+    height: 200px;
+  }
   .slick-slide {
     margin: 0px 10px 0px 10px;
     min-width: 300px;
@@ -1234,6 +1251,9 @@ input::placeholder {
     padding: 0px 0px 0px 25px;
     margin: 0px 0px 0px 0px;
   }
+  .slick-slider {
+    height: 230px;
+  }
 }
 
 @media (min-width: 640px) {
@@ -1350,6 +1370,9 @@ input::placeholder {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 50%;
             flex: 0 0 50%;
+  }
+  .slick-slider {
+    height: 330px;
   }
   .slick-list {
     min-height: 300px;
@@ -1855,11 +1878,8 @@ input::placeholder {
     display: flex;
     height: 100%;
   }
-  .slick-list {
-    min-height: 370px;
-    margin: 0px auto;
-    min-width: 0;
-    max-width: 1200px;
+  .slick-slider {
+    height: 330px;
   }
 }
 
