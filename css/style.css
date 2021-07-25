@@ -1834,8 +1834,11 @@ input::placeholder {
     color: inherit;
   }
   .header__menu-link {
+    font-family: "PT Sans", sans-serif;
     font-weight: 400;
-    font-size: 1.6vh;
+    font-size: 15px;
+    line-height: 22.5px;
+    font-weight: 400;
     text-transform: uppercase;
     color: #fff;
   }

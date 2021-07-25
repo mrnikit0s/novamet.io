@@ -1327,9 +1327,10 @@ input::placeholder {
 			color: inherit;
 		}
 		&__menu-link {
-			//@include fnt(400, 15, 22.5);
+			@include fnt(400, 15, 22.5);
 			font-weight: 400;
-			font-size: 1.6vh;
+			//font-size: 1.6vh;
+
 			text-transform: uppercase;
 			color: #fff;
 		}
