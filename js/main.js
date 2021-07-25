@@ -7,7 +7,17 @@ $moveFlag800 = 0;
 $moveFlag1024 = 0;
 $moveFlag1200 = 0;
 $reloadFlag = 0;
+
+//------------------------ burger click--------------------------------------
+
 $(document).ready(function () {
+	/* slider */
+	$('.slider').slick({
+		slideToShow: 1,
+		arrows: false
+	});
+	/*---------------------------------------*/
+
 	$('.header__burger-menu').click(function (event) {
 		if ($catalogFlag == -1) {
 			$('.header__burger-menu,.header__menu').toggleClass('active');
@@ -26,11 +36,7 @@ $(document).ready(function () {
 			$menuFlag = -1;
 		}
 	});
-
-
-	$(window).resize(function () {
-		$w = $(window).width();
-	});
+	//------------------------------------------------- move element ------------------------
 	$w = $(window).width();
 	if ($w >= 320 && $w <= 800) {
 		$('.header__search-btn').click(function (event) {
@@ -55,6 +61,10 @@ $(document).ready(function () {
 		/* удаляем лишнее */
 		$('.section1__content').detach();
 		$moveFlag460 = 1;
+		$moveFlag800 = 0;
+		$moveFlag1024 = 0;
+		$moveFlag1200 = 0;
+
 	}
 	if ($moveFlag800 == 0 && $w > 800) {
 		for ($i = 0; $i < 2; $i++) {
@@ -71,6 +81,9 @@ $(document).ready(function () {
 		$('.section1__price').appendTo('.section1__content-col:last-child');
 		$('.section1__calc').appendTo('.section1__content-col:last-child');
 		$moveFlag800 = 1;
+		$moveFlag460 = 0;
+		$moveFlag1024 = 0;
+		$moveFlag1200 = 0;
 	}
 	if ($moveFlag1024 == 0 && $w >= 1024) {
 		$('.topline').insertAfter('.section1');
@@ -95,6 +108,10 @@ $(document).ready(function () {
 		$('.header').insertAfter('.topline');
 		/*---------------меняем местами колонки-------------*/
 		$('.section1__content-col:nth-child(4)').insertAfter('.section1__content-col:nth-child(2)');
+		$moveFlag1024 = 1;
+		$moveFlag460 = 0;
+		$moveFlag800 = 0;
+		$moveFlag1200 = 0;
 	}
 	if ($moveFlag1200 == 0 && $w >= 1200) {
 		/*---------------добавляем контейнер topline----------------*/
@@ -103,5 +120,15 @@ $(document).ready(function () {
 		$('.topline__row').appendTo('.topline .container');
 		/*--------------------content__row в контейнер ------*/
 		$('.content__row').appendTo('.content>.container');
+		$moveFlag460 = 0;
+		$moveFlag800 = 0;
+		$moveFlag1024 = 0;
+		$moveFlag1200 = 1;
 	}
+
+
+	$(window).resize(function () {
+		$w = $(window).width();
+	});
+
 });

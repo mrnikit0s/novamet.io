@@ -42,6 +42,68 @@ input::placeholder {
 .wrapper {
 	width: 100%;
 }
+.section2 {
+	padding: 20px 0px 20px 0px;
+	background: #edf1f2;
+	box-sizing: border-box;
+	&__title {
+		text-align: center;
+	}
+	p {
+		margin: 10px 0px 10px 0px;
+		@include fnt(400, 14, 22.5);
+		color: $colorGray;
+	}
+	&__list {
+		padding: 0px 0px 0px 20px;
+	}
+	&__list li {
+		font-family: $fontFamily;
+		@include fnt(400, 14, 22.5);
+		color: $colorGray;
+	}
+}
+.slider {
+	display: flex;
+	justify-content: center;
+	margin: 40px 0px 0px 0px;
+	display: flex;
+	&__slide {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 0px 20px 0px 20px;
+		height: 100%;
+		min-width: 0;
+		width: 100%;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	&__slide span {
+		display: flex;
+		position: relative;
+		top: 20px;
+		color: #000;
+	}
+	&__slide img {
+		width: 100%;
+	}
+}
+.slick-list {
+	min-height: 190px;
+	margin: 0px auto;
+	min-width: 0;
+	max-width: 1200px;
+	overflow: hidden;
+}
+.slick-track {
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+.slick-slide {
+}
 @media (min-width: 320px) {
 	body.lock {
 		overflow: hidden;
@@ -377,6 +439,7 @@ input::placeholder {
 		}
 		//menu.active end
 	}
+
 	.topline {
 		padding: 0px 10px 0px 10px;
 		display: flex;
@@ -582,6 +645,72 @@ input::placeholder {
 			color: $colorGray;
 		}
 	}
+	.section3 {
+		padding: 20px 0px 20px 0px;
+		background: #2a3235;
+		&__title {
+			text-align: center;
+		}
+		&__title h1 {
+			color: #fff;
+		}
+
+		&__row {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		&__col {
+			margin: 20px 0px 20px 0px;
+			flex: 1 1 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		&__col img {
+			flex: 0 0 59px;
+		}
+		&__col span {
+			text-align: center;
+			padding: 10px 0px 0px 0px;
+			color: #fff;
+			@include fnt(400, 14, 22.5);
+		}
+	}
+	.section4 {
+		padding: 20px 0px 20px 0px;
+		&__title {
+			text-align: center;
+		}
+		&__row {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+		&__col {
+			margin: 0px 0px 20px 0px;
+			padding: 0px 10px 0px 10px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			flex: 0 0 100%;
+		}
+		&__col img {
+			display: block;
+			width: 124px;
+			height: 140px;
+		}
+		&__col span {
+			padding: 10px 0px 10px 0px;
+			@include fnt(700, 14, 22.5);
+			text-align: center;
+		}
+		&__col span:last-child {
+			padding: 10px 0px 10px 0px;
+			@include fnt(400, 14, 22.5);
+		}
+	}
 }
 @media (min-width: 426px) {
 	.wrapper {
@@ -710,6 +839,12 @@ input::placeholder {
 			margin: 0px 0px 0px 0px;
 		}
 	}
+	.slick-list {
+		min-height: 230px;
+		margin: 0px auto;
+		min-width: 0;
+		max-width: 1200px;
+	}
 }
 @media (min-width: 640px) {
 	.wrapper {
@@ -753,6 +888,55 @@ input::placeholder {
 			padding: 0px 0px 0px 25px;
 			margin: 0px 0px 0px 0px;
 		}
+	}
+	.section3 {
+		padding: 20px 0px 20px 0px;
+		background: #2a3235;
+		&__title {
+			text-align: center;
+		}
+		&__title h1 {
+			color: #fff;
+		}
+
+		&__row {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		&__col {
+			margin: 20px 0px 20px 0px;
+			flex: 0 1 33.33%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		&__col img {
+			flex: 0 0 59px;
+		}
+		&__col span {
+			text-align: center;
+			padding: 10px 0px 0px 0px;
+			color: #fff;
+			@include fnt(400, 14, 22.5);
+		}
+	}
+	.section4 {
+		&__col {
+			margin: 0px 0px 20px 0px;
+			padding: 0px 10px 0px 10px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			flex: 0 0 50%;
+		}
+	}
+	.slick-list {
+		min-height: 300px;
+		margin: 0px auto;
+		min-width: 0;
+		max-width: 1200px;
 	}
 }
 @media (min-width: 800px) {
@@ -844,6 +1028,16 @@ input::placeholder {
 			display: flex;
 			height: 100%;
 			//border: 1px solid #cdcdcd;
+		}
+	}
+	.section4 {
+		&__col {
+			margin: 0px 0px 20px 0px;
+			padding: 0px 10px 0px 10px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			flex: 0 0 25%;
 		}
 	}
 }
@@ -1118,6 +1312,12 @@ input::placeholder {
 			display: flex;
 			height: 100%;
 		}
+	}
+	.slick-list {
+		min-height: 370px;
+		margin: 0px auto;
+		min-width: 0;
+		max-width: 1200px;
 	}
 }
 @media (min-width: 1200px) {
