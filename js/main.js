@@ -149,9 +149,11 @@ $(document).ready(function () {
 		$moveFlag1200 = 1;
 	}
 
-
 	$(window).resize(function () {
 		$w = $(window).width();
 	});
 
+	window.onresize = function () {
+		location.reload();
+	};
 });
