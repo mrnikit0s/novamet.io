@@ -122,7 +122,6 @@ input::placeholder {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0px 20px 0px 20px;
   height: 100%;
   min-width: 0;
   width: 100%;
@@ -165,7 +164,7 @@ input::placeholder {
   min-height: 190px;
   margin: 0px auto;
   min-width: 0;
-  max-width: 1200px;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -177,6 +176,11 @@ input::placeholder {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.slick-slide {
+  margin: 0px 10px 0px 10px;
+  width: 100%;
 }
 
 .slick-dots {
@@ -1043,6 +1047,11 @@ input::placeholder {
     font-size: 14px;
     line-height: 22.5px;
   }
+  .slick-slide {
+    margin: 0px 10px 0px 10px;
+    min-width: 300px;
+    width: 100%;
+  }
 }
 
 @media (min-width: 426px) {
@@ -1103,6 +1112,11 @@ input::placeholder {
         -ms-flex: 1 1 49%;
             flex: 1 1 49%;
     height: 100%;
+  }
+  .slick-slide {
+    margin: 0px 10px 0px 10px;
+    min-width: 400px;
+    width: 100%;
   }
 }
 
@@ -1219,12 +1233,6 @@ input::placeholder {
   .content__item-list {
     padding: 0px 0px 0px 25px;
     margin: 0px 0px 0px 0px;
-  }
-  .slick-list {
-    min-height: 230px;
-    margin: 0px auto;
-    min-width: 0;
-    max-width: 1200px;
   }
 }
 

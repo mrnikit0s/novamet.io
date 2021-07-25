@@ -72,14 +72,13 @@ input::placeholder {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		margin: 0px 20px 0px 20px;
+		//margin: 0px 20px 0px 20px;
 		height: 100%;
 		min-width: 0;
 		width: 100%;
 		background-size: cover;
 		background-repeat: no-repeat;
 	}
-
 	&__slide span {
 		display: flex;
 		position: relative;
@@ -102,7 +101,8 @@ input::placeholder {
 	min-height: 190px;
 	margin: 0px auto;
 	min-width: 0;
-	max-width: 1200px;
+	//max-width: 1200px;
+	width: 100%;
 	overflow: hidden;
 }
 .slick-track {
@@ -111,6 +111,9 @@ input::placeholder {
 	align-items: center;
 }
 .slick-slide {
+	margin: 0px 10px 0px 10px;
+	//min-width: 100%;
+	width: 100%;
 }
 
 .slick-dots {
@@ -739,6 +742,11 @@ input::placeholder {
 			@include fnt(400, 14, 22.5);
 		}
 	}
+	.slick-slide {
+		margin: 0px 10px 0px 10px;
+		min-width: 300px;
+		width: 100%;
+	}
 }
 @media (min-width: 426px) {
 	.wrapper {
@@ -783,6 +791,11 @@ input::placeholder {
 		}
 		&__item-wrapper {
 		}
+	}
+	.slick-slide {
+		margin: 0px 10px 0px 10px;
+		min-width: 400px;
+		width: 100%;
 	}
 }
 @media (min-width: 461px) {
@@ -866,12 +879,6 @@ input::placeholder {
 			padding: 0px 0px 0px 25px;
 			margin: 0px 0px 0px 0px;
 		}
-	}
-	.slick-list {
-		min-height: 230px;
-		margin: 0px auto;
-		min-width: 0;
-		max-width: 1200px;
 	}
 }
 @media (min-width: 640px) {
