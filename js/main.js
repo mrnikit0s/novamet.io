@@ -65,8 +65,8 @@ $(document).ready(function () {
 
 	//------------------------------------------------- move element ------------------------
 	function move($w) {
-		console.log($w);
 		$w = $(window).width();
+
 		if ($w >= 320 && $w <= 800) {
 			$('.header__search-btn').click(function () {
 				$('.header__search-block').toggleClass('active');
@@ -74,7 +74,9 @@ $(document).ready(function () {
 			});
 		}
 		// перестановка элементов в section1 ----------------------------------
+
 		if ($moveFlag460 == 0 && $w > 460) {
+
 			$('.section1__content').before('<div class="section1__content-row"</div>');
 			$('.section1__content-row').append('<div class="section1__content-col"</div>');
 			$('.section1__content-row').append('<div class="section1__content-col"</div>');
@@ -159,9 +161,15 @@ $(document).ready(function () {
 			console.log('1200');
 		}
 	}
+	/* 26.07
 	$(window).resize(function () {
 		$w = $(window).width();
+
 	});
+	*/
+	window.onresize = function () {
+		location.reload();
+	};
 	move($w);
 
 });
