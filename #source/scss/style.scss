@@ -469,6 +469,13 @@ input::placeholder {
 			z-index: 3;
 		}
 		//menu.active end
+
+		&__submenu-list li {
+			margin: 5px 0px 0px 10px;
+		}
+		&__submenu-link {
+			color: inherit;
+		}
 	}
 
 	.topline {

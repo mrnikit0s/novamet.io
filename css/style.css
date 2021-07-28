@@ -487,6 +487,12 @@ input::placeholder {
     overflow: auto;
     z-index: 3;
   }
+  .header__submenu-list li {
+    margin: 5px 0px 0px 10px;
+  }
+  .header__submenu-link {
+    color: inherit;
+  }
   .topline {
     padding: 0px 10px 0px 10px;
     display: flex;

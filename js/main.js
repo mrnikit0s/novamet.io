@@ -95,7 +95,6 @@ $(document).ready(function () {
 			$moveFlag800 = 0;
 			$moveFlag1024 = 0;
 			$moveFlag1200 = 0;
-			console.log('460');
 
 		}
 		if ($moveFlag800 == 0 && $w > 800) {
@@ -116,7 +115,6 @@ $(document).ready(function () {
 			$moveFlag460 = 0;
 			$moveFlag1024 = 0;
 			$moveFlag1200 = 0;
-			console.log('800');
 		}
 		if ($moveFlag1024 == 0 && $w >= 1024) {
 			$('.topline').insertAfter('.section1');
@@ -145,7 +143,6 @@ $(document).ready(function () {
 			$moveFlag460 = 0;
 			$moveFlag800 = 0;
 			$moveFlag1200 = 0;
-			console.log('1024');
 		}
 		if ($moveFlag1200 == 0 && $w >= 1200) {
 			/*---------------добавляем контейнер topline----------------*/
@@ -158,7 +155,6 @@ $(document).ready(function () {
 			$moveFlag800 = 0;
 			$moveFlag1024 = 0;
 			$moveFlag1200 = 1;
-			console.log('1200');
 		}
 	}
 	/* 26.07
