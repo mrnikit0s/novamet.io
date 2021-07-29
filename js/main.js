@@ -139,6 +139,9 @@ $(document).ready(function () {
 			$('.header').insertAfter('.topline');
 			/*---------------меняем местами колонки-------------*/
 			$('.section1__content-col:nth-child(4)').insertAfter('.section1__content-col:nth-child(2)');
+			/* header__catalog в content__aside */
+			$('.header__catalog').appendTo('.content__aside');
+			$('.header__catalog').addClass('content__catalog');
 			$moveFlag1024 = 1;
 			$moveFlag460 = 0;
 			$moveFlag800 = 0;

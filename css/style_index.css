@@ -711,18 +711,6 @@ input::placeholder {
     line-height: 22.4px;
     color: #4c4c4c;
   }
-  .content__main {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-  .content__main img {
-    display: block;
-    width: 100%;
-  }
-  .content__text p {
-    margin: 10px 0px 10px 0px;
-  }
   .section3 {
     padding: 20px 0px 20px 0px;
     background: #2a3235;
@@ -1111,20 +1099,6 @@ input::placeholder {
     display: flex;
     height: 100%;
   }
-  .content__main {
-    display: block;
-    width: 100%;
-  }
-  .content__main img {
-    padding: 0px 10px 10px 0px;
-    display: block;
-    float: left;
-    width: 300px;
-    height: 200px;
-  }
-  .content__text p {
-    margin: 0px 0px 20px 0px;
-  }
   .section4__col {
     margin: 0px 0px 20px 0px;
     padding: 0px 10px 0px 10px;
@@ -1426,24 +1400,10 @@ input::placeholder {
   .header__search-form {
     box-shadow: 4px 4px 41px -8px rgba(0, 0, 0, 0.25);
   }
-  .header__catalog {
-    display: block;
-    position: absolute;
-    top: 0px;
-    left: -100%;
-    transition: 0.5s;
-    box-shadow: none;
-    border-radius: 5px;
-    background: #fff;
-  }
-  .content__title h1 {
-    text-align: left;
-  }
   .content__row {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: flex-start;
     flex-wrap: wrap;
     height: 100%;
   }
@@ -1452,19 +1412,6 @@ input::placeholder {
     flex: 0 1 19%;
     display: flex;
     height: 100%;
-  }
-  .content__aside {
-    display: flex;
-    flex: 0 0 20%;
-  }
-  .content__article {
-    display: flex;
-    flex-direction: column;
-    flex: 1 0 80%;
-  }
-  .content__catalog {
-    display: flex;
-    position: static;
   }
   .slick-slider {
     height: 330px;
