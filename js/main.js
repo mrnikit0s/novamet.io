@@ -86,7 +86,14 @@ $(document).ready(function () {
 		$('.content__row').appendTo('.content>.container');
 	}
 	/*********************** перестановка блоков ****************************/
-
+	// wp меню добавление классов top-menu
+	$('nav.menu-top_menu-container').addClass('header__menu');
+	$('.header__menu ul:first-child').addClass('header__menu-list');
+	$('.header__menu-list li a').addClass('header__menu-link');
+	$('.sub-menu ').addClass('header__submenu-list');
+	// добавление классов catalog menu
+	$('nav.header__catalog ul').addClass('header__catalog-list');
+	$('.header__catalog-list li a').addClass('header__catalog-link');
 
 	/* slider */
 	$('.slider').slick({
