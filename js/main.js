@@ -1,5 +1,8 @@
 $menuFlag = -1;
 $catalogFlag = -1;
+$menuLock = false;
+$catalogLock = false;
+
 
 $w = $(window).width(); //текущий размер экрана
 $moveFlag460 = 0;
@@ -30,10 +33,11 @@ $(window).on('resize', function (e) {
 });
 /* -------------------------------------------------------*/
 
-
+/* при смене ориентации перезагрузка страницы */
 window.addEventListener('orientationchange', function () {
 	location.reload();
 }, false);
+
 
 function move($w) {
 	$w = $(window).width();
@@ -173,61 +177,46 @@ $(document).ready(function () {
 
 		]
 	});
-	/*---------------------------------------
-	//------------------------ burger click--------------------------------------
-	$('.header__burger-menu-wrapper').click(function (event) {
-		if ($catalogFlag == -1) {
-			$('.header__burger-menu,.header__menu').toggleClass('active');
-			$('body').toggleClass('lock');
-			$('.wrapper').toggleClass('lock');
-			$menuFlag = $menuFlag * -1;
-			$catalogFlag = -1;
-		}
-	});
-	$('.header__burger-catalog-wrapper').click(function (event) {
-		if ($menuFlag == -1) {
-			$('.header__burger-catalog,.header__catalog').toggleClass('active');
-			$('body').toggleClass('lock');
-			$('.wrapper').toggleClass('lock');
-			$catalogFlag = $catalogFlag * (-1);
-			$menuFlag = -1;
-		}
-	});
-*/
 
-	/* burger доработка */
+	/* burger меню доработка */
 
 	$('.header__burger-menu-wrapper').click(function (event) {
-		//if ($catalogFlag == -1) {
 		$('.header__burger-menu,.header__menu').toggleClass('active');
 		$('.header__burger-catalog,.header__catalog').removeClass('active');
-		$('body').toggleClass('lock');
-		$('.wrapper').toggleClass('lock');
+
 		$menuFlag = $menuFlag * -1;
-		$catalogFlag = -1;
-		//}
+		if ($menuFlag == 1) {
+			$('body').addClass('lock');
+			$('.wrapper').addClass('lock');
+			document.ontouchmove = function (event) {
+				event.preventDefault();
+			}
+		}
+		$menuLock = $('.header__menu').hasClass('active');
+		if ($menuLock == false) {
+			$('body').removeClass('lock');
+			$('.wrapper').removeClass('lock');
+		}
 	});
 	$('.header__burger-catalog-wrapper').click(function (event) {
-		//if ($menuFlag == -1) {
 		$('.header__burger-catalog,.header__catalog').toggleClass('active');
 		$('.header__burger-menu,.header__menu').removeClass('active');
-		$('body').toggleClass('lock');
-		$('.wrapper').toggleClass('lock');
 		$catalogFlag = $catalogFlag * (-1);
-		$menuFlag = -1;
-		//}
+		if ($catalogFlag == 1) {
+			$('body').addClass('lock');
+			$('.wrapper').addClass('lock');
+			document.ontouchmove = function (event) {
+				event.preventDefault();
+			}
+		}
+		$catalogLock = $('.header__catalog').hasClass('active');
+		if ($catalogLock == false) {
+			$('body').removeClass('lock');
+			$('.wrapper').removeClass('lock');
+		}
 	});
 
-	/*-------burger доработка------*/
-
-
-
-
 	//------------------------------------------------- move element ------------------------
-
-
-
-
 
 	/*
 		$(window).resize(function () {
