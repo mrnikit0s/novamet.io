@@ -9,79 +9,31 @@ $moveFlag1200 = 0;
 $reloadFlag = 0;
 
 
+/* отслеживание завершение изменения ширины экрана 
+var resizeTimer = false;
 
-$(document).ready(function () {
-	// wp меню добавление классов top-menu
-	$('nav.menu-top_menu-container').addClass('header__menu');
-	$('.header__menu ul:first-child').addClass('header__menu-list');
-	$('.header__menu-list li a').addClass('header__menu-link');
-	$('.sub-menu ').addClass('header__submenu-list');
-	// добавление классов catalog menu
-	$('nav.header__catalog ul').addClass('header__catalog-list');
-	$('.header__catalog-list li a').addClass('header__catalog-link');
+$(window).on('resize', function (e) {
 
-	/* slider */
-	$('.slider').slick({
-		centerMode: true,
-		slideToShow: 1,
-		dots: true,
-		arrows: false,
-		autoplay: false,
-		autoplaySpeed: 2000,
-		responsive: [
-			{
-				breakpoint: 1024,
-				settings: {
-					centerMode: true,
-					infinite: true,
-					dots: true
-				}
-			},
-			{
-				breakpoint: 800,
-				settings: {
-					centerMode: false,
-					infinite: true,
-					dots: true
-				}
-			},
+	if (!resizeTimer) {
+		$(window).trigger('resizestart');
+	}
 
-		]
-	});
-	/*---------------------------------------*/
-	//------------------------ burger click--------------------------------------
-	$('.header__burger-menu-wrapper').click(function (event) {
-		if ($catalogFlag == -1) {
-			$('.header__burger-menu,.header__menu').toggleClass('active');
-			$('body').toggleClass('lock');
-			$('.wrapper').toggleClass('lock');
-			$menuFlag = $menuFlag * -1;
-			$catalogFlag = -1;
-		}
-	});
-	$('.header__burger-catalog-wrapper').click(function (event) {
-		if ($menuFlag == -1) {
-			$('.header__burger-catalog,.header__catalog').toggleClass('active');
-			$('body').toggleClass('lock');
-			$('.wrapper').toggleClass('lock');
-			$catalogFlag = $catalogFlag * (-1);
-			$menuFlag = -1;
-		}
-	});
+	clearTimeout(resizeTimer);
+	resizeTimer = setTimeout(function () {
 
-	//------------------------------------------------- move element ------------------------
+		resizeTimer = false;
+		$(window).trigger('resizeend');
 
-	/*
-		$(window).resize(function () {
-		//	location.reload();
-			//$w = $(window).width();
-			//moveNew();
-	
-		});
-	*/
-
+	}, 250);
+}).on('resizeend', function () {
 	move($w);
 });
+/* -------------------------------------------------------*/
+
+
+window.addEventListener('orientationchange', function () {
+	location.reload();
+}, false);
 
 function move($w) {
 	$w = $(window).width();
@@ -179,3 +131,113 @@ function move($w) {
 		$moveFlag1200 = 1;
 	}
 }
+
+
+
+
+$(document).ready(function () {
+	// wp меню добавление классов top-menu
+	$('nav.menu-top_menu-container').addClass('header__menu');
+	$('.header__menu ul:first-child').addClass('header__menu-list');
+	$('.header__menu-list li a').addClass('header__menu-link');
+	$('.sub-menu ').addClass('header__submenu-list');
+	// добавление классов catalog menu
+	$('nav.header__catalog ul').addClass('header__catalog-list');
+	$('.header__catalog-list li a').addClass('header__catalog-link');
+
+	/* slider */
+	$('.slider').slick({
+		centerMode: true,
+		slideToShow: 1,
+		dots: true,
+		arrows: false,
+		autoplay: false,
+		autoplaySpeed: 2000,
+		responsive: [
+			{
+				breakpoint: 1024,
+				settings: {
+					centerMode: true,
+					infinite: true,
+					dots: true
+				}
+			},
+			{
+				breakpoint: 800,
+				settings: {
+					centerMode: false,
+					infinite: true,
+					dots: true
+				}
+			},
+
+		]
+	});
+	/*---------------------------------------
+	//------------------------ burger click--------------------------------------
+	$('.header__burger-menu-wrapper').click(function (event) {
+		if ($catalogFlag == -1) {
+			$('.header__burger-menu,.header__menu').toggleClass('active');
+			$('body').toggleClass('lock');
+			$('.wrapper').toggleClass('lock');
+			$menuFlag = $menuFlag * -1;
+			$catalogFlag = -1;
+		}
+	});
+	$('.header__burger-catalog-wrapper').click(function (event) {
+		if ($menuFlag == -1) {
+			$('.header__burger-catalog,.header__catalog').toggleClass('active');
+			$('body').toggleClass('lock');
+			$('.wrapper').toggleClass('lock');
+			$catalogFlag = $catalogFlag * (-1);
+			$menuFlag = -1;
+		}
+	});
+*/
+
+	/* burger доработка */
+
+	$('.header__burger-menu-wrapper').click(function (event) {
+		//if ($catalogFlag == -1) {
+		$('.header__burger-menu,.header__menu').toggleClass('active');
+		$('.header__burger-catalog,.header__catalog').removeClass('active');
+		$('body').toggleClass('lock');
+		$('.wrapper').toggleClass('lock');
+		$menuFlag = $menuFlag * -1;
+		$catalogFlag = -1;
+		//}
+	});
+	$('.header__burger-catalog-wrapper').click(function (event) {
+		//if ($menuFlag == -1) {
+		$('.header__burger-catalog,.header__catalog').toggleClass('active');
+		$('.header__burger-menu,.header__menu').removeClass('active');
+		$('body').toggleClass('lock');
+		$('.wrapper').toggleClass('lock');
+		$catalogFlag = $catalogFlag * (-1);
+		$menuFlag = -1;
+		//}
+	});
+
+	/*-------burger доработка------*/
+
+
+
+
+	//------------------------------------------------- move element ------------------------
+
+
+
+
+
+	/*
+		$(window).resize(function () {
+		//	location.reload();
+			//$w = $(window).width();
+			//moveNew();
+	
+		});
+	*/
+
+	move($w);
+});
+
