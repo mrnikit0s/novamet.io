@@ -148,6 +148,9 @@ $(document).ready(function () {
 	// добавление классов catalog menu
 	$('nav.header__catalog ul').addClass('header__catalog-list');
 	$('.header__catalog-list li a').addClass('header__catalog-link');
+	//добавление классов форме поиска
+	$('#searchform').addClass('header__search-form active');
+
 
 	/* slider */
 	$('.slider').slick({
