@@ -188,15 +188,13 @@ $(document).ready(function () {
 		if ($menuFlag == 1) {
 			$('body').addClass('lock');
 			$('.wrapper').addClass('lock');
-			document.ontouchmove = function (event) {
-				event.preventDefault();
-			}
 		}
 		$menuLock = $('.header__menu').hasClass('active');
 		if ($menuLock == false) {
 			$('body').removeClass('lock');
 			$('.wrapper').removeClass('lock');
 		}
+
 	});
 	$('.header__burger-catalog-wrapper').click(function (event) {
 		$('.header__burger-catalog,.header__catalog').toggleClass('active');
@@ -205,9 +203,6 @@ $(document).ready(function () {
 		if ($catalogFlag == 1) {
 			$('body').addClass('lock');
 			$('.wrapper').addClass('lock');
-			document.ontouchmove = function (event) {
-				event.preventDefault();
-			}
 		}
 		$catalogLock = $('.header__catalog').hasClass('active');
 		if ($catalogLock == false) {
@@ -215,6 +210,31 @@ $(document).ready(function () {
 			$('.wrapper').removeClass('lock');
 		}
 	});
+	/* скрываем меню при нажатии на пустом месте */
+	jQuery(function ($) {
+		$(document).mouseup(function (e) { // событие клика по веб-документу
+			var divMenu = $(".header__burger-menu-wrapper"); // тут указываем ID элемента
+			var divCatalog = $(".header__burger-catalog-wrapper");
+			if (!divMenu.is(e.target) // если клик был не по нашему блоку
+				&& divMenu.has(e.target).length === 0) { // и не по его дочерним элементам
+				$('.header__menu').hide(); // скрываем его
+				$('.header__burger-menu,.header__menu').removeClass('active');
+			}
+			else {
+				$('.header__menu').show(); //возможность открытия при следующем клике
+			}
+			if (!divCatalog.is(e.target) // если клик был не по нашему блоку
+				&& divCatalog.has(e.target).length === 0) { // и не по его дочерним элементам
+				$('.header__catalog').hide(); // скрываем его
+				$('.header__burger-catalog,.header__catalog').removeClass('active');
+			}
+			else {
+				$('.header__catalog').show(); //возможность открытия при следующем клике
+			}
+		});
+	});
+
+
 
 	//------------------------------------------------- move element ------------------------
 
@@ -229,4 +249,3 @@ $(document).ready(function () {
 
 	move($w);
 });
-
