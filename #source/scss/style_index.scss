@@ -312,6 +312,14 @@ input::placeholder {
 			justify-content: center;
 			z-index: 3;
 		}
+		// изменение стандартной формы поиска
+
+		&__search label {
+			display: none;
+		}
+		&__search input['submit'] {
+			display: none;
+		}
 		&__search img {
 			display: block;
 			height: 16px;

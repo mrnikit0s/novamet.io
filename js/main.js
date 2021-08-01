@@ -139,6 +139,7 @@ function move($w) {
 
 
 
+
 $(document).ready(function () {
 	// wp меню добавление классов top-menu
 	$('nav.menu-top_menu-container').addClass('header__menu');
@@ -148,9 +149,6 @@ $(document).ready(function () {
 	// добавление классов catalog menu
 	$('nav.header__catalog ul').addClass('header__catalog-list');
 	$('.header__catalog-list li a').addClass('header__catalog-link');
-	//добавление классов форме поиска
-	$('#searchform').addClass('header__search-form active');
-
 
 	/* slider */
 	$('.slider').slick({
@@ -213,29 +211,31 @@ $(document).ready(function () {
 			$('.wrapper').removeClass('lock');
 		}
 	});
-	/* скрываем меню при нажатии на пустом месте */
-	jQuery(function ($) {
-		$(document).mouseup(function (e) { // событие клика по веб-документу
-			var divMenu = $(".header__burger-menu-wrapper"); // тут указываем ID элемента
-			var divCatalog = $(".header__burger-catalog-wrapper");
-			if (!divMenu.is(e.target) // если клик был не по нашему блоку
-				&& divMenu.has(e.target).length === 0) { // и не по его дочерним элементам
-				$('.header__menu').hide(); // скрываем его
-				$('.header__burger-menu,.header__menu').removeClass('active');
-			}
-			else {
-				$('.header__menu').show(); //возможность открытия при следующем клике
-			}
-			if (!divCatalog.is(e.target) // если клик был не по нашему блоку
-				&& divCatalog.has(e.target).length === 0) { // и не по его дочерним элементам
-				$('.header__catalog').hide(); // скрываем его
-				$('.header__burger-catalog,.header__catalog').removeClass('active');
-			}
-			else {
-				$('.header__catalog').show(); //возможность открытия при следующем клике
-			}
+	/* скрываем меню при нажатии на пустом месте при мобильном разрешении*/
+	if ($w < 1024) {
+		jQuery(function ($) {
+			$(document).mouseup(function (e) { // событие клика по веб-документу
+				var divMenu = $(".header__burger-menu-wrapper"); // тут указываем ID элемента
+				var divCatalog = $(".header__burger-catalog-wrapper");
+				if (!divMenu.is(e.target) // если клик был не по нашему блоку
+					&& divMenu.has(e.target).length === 0) { // и не по его дочерним элементам
+					$('.header__menu').hide(); // скрываем его
+					$('.header__burger-menu,.header__menu').removeClass('active');
+				}
+				else {
+					$('.header__menu').show(); //возможность открытия при следующем клике
+				}
+				if (!divCatalog.is(e.target) // если клик был не по нашему блоку
+					&& divCatalog.has(e.target).length === 0) { // и не по его дочерним элементам
+					$('.header__catalog').hide(); // скрываем его
+					$('.header__burger-catalog,.header__catalog').removeClass('active');
+				}
+				else {
+					$('.header__catalog').show(); //возможность открытия при следующем клике
+				}
+			});
 		});
-	});
+	}
 
 
 

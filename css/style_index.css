@@ -431,6 +431,9 @@ input::placeholder {
             justify-content: center;
     z-index: 3;
   }
+  .header__search label {
+    display: none;
+  }
   .header__search img {
     display: block;
     height: 16px;
